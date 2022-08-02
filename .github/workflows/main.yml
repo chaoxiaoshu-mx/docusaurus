@@ -11,9 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       # 下载 git submodule
-      - uses: srt32/git-actions@v0.0.3
-        with:
-          args: git submodule update --init --recursive
       # 使用 node:10
       - name: use Node.js 10
         uses: actions/setup-node@v1
@@ -22,16 +19,16 @@ jobs:
       # npm install
       - name: npm install
         run: |
-          # npm install -g hexo-cli
           npm install
-        # env:
-          # CI: true
+          npm run build
+        env:
+          CI: true
       # build
       - name: docusaurus build
         run: |
           npm run build
-        # env:
-          # CI: true
+        env:
+          CI: true
       # Deploy
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.7
