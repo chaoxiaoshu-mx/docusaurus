@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ThingsPanel123',
-  tagline: 'Dinosaurs are cool',
+  title: 'ThingsPanel456',
+  tagline: '这个网站很酷',
   url: 'http://docs.thingspanel.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
