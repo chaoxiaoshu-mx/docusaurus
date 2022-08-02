@@ -46,7 +46,8 @@ http://docs.thingspanel.io/
     @docusaurus/core": "2.0.0-rc.1",
 
 左脚上面logo  
-  docusaurus.config.js 文件
+```aidl
+docusaurus.config.js 文件
     themeConfig {
       navbar：{
          logo: {
@@ -55,87 +56,94 @@ http://docs.thingspanel.io/
         },
       }
     }
-域名绑定 
-   docusaurus.config.js 文件
-      url: 'http://docs.thingspanel.io',
-      baseUrl: '/',
+```
+域名绑定
+docusaurus.config.js 文件
+```aidl
+url: 'http://docs.thingspanel.io',
+baseUrl: '/',
+```
 
 
-版本构建  根据版本切换文档
-versioned_docs 版本列表
-  version-v2  //版本文件夹 v2是版本号
-    hollow.md  //版本文件
-  version-v3  //版本文件夹 v3是版本号
-    hollow.md  //版本文件
-versioned_sidebars 版本左侧列表
-  version-v2-sidebars  //版本侧边栏
-  version-v3-sidebars  //版本侧边栏
+版本构建  根据版本切换文档  
+versioned_docs 版本列表  
+  version-v2  //版本文件夹 v2是版本号  
+    hollow.md  //版本文件  
+  version-v3  //版本文件夹 v3是版本号  
+    hollow.md  //版本文件  
+versioned_sidebars 版本左侧列表  
+  version-v2-sidebars  //版本侧边栏  
+  version-v3-sidebars  //版本侧边栏  
 versions.json   版本管理器  最新版本在最前面 ['0.4','0.3','0.2','0.1']
                                             最新   次级  ---    ---
 
 翻译命令 需要购买token 路径  crowdin.yml 这个文件 
-  api_token_env: "我的令牌"   //我的令牌就是需要替换的地方
-  npm run write-translations 生成 npm run crowdin upload 上传  npm run crowdin download 下载  
-自动化翻译脚本   设置 CROWDIN_PERSONAL_TOKEN 环境变量
+  api_token_env: "我的令牌"   //我的令牌就是需要替换的地方  
+  npm run write-translations 生成 npm run crowdin upload 上传  npm run crowdin download 下载    
+自动化翻译脚本   设置 CROWDIN_PERSONAL_TOKEN 环境变量  
 在构建 Docusaurus 站点之前，在 CI 中调用 npm run crowdin:sync 脚本
-  "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"
+  "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"  
 
-链接到代码库
-    docusaurus.config.js 文件
-    themeConfig {
-      navbar：{
-         items: [
-          {
-            href: 'https://github.com/ThingsPanel', //链接到代码库的链接
-            label: 'GitHub',
-            position: 'right',
-          },
-         ]
-      }
+链接到代码库  
+docusaurus.config.js 文件
+```
+themeConfig {
+    navbar：{
+        items: [
+            {
+                href: 'https://github.com/ThingsPanel', //链接到代码库的链接
+                label: 'GitHub',
+                position: 'right',
+            },
+        ]
     }
+}
+```
 
 菜单配置
-     {
+```aidl
+{
       type: 'doc',
       docId: 'intro',
       position: 'left',
       label: 'Docs',
-    },
-    { to: '/blog', label: 'Blog', position: 'left' },
+},
+{ to: '/blog', label: 'Blog', position: 'left' },
+```
 
 
 
 <!-- 目录项目说明 -->
-.docusaurus  运行时自动生成文件
+.docusaurus  运行时自动生成文件  
 blog 菜单博客里面的内容  
   命名规则  
-    文件夹
-      日期-名称  2021-08-26-welcome
-          index.md 是文章内容
-    文件
-      名称-
-      文件内部决定页面显示 
-      slug: text   ---url 
-      title: text Post  --- 名称
-      authors:  ---作者信息
-        name: Gao Website
-        title: Docusaurus Core Team 
-        url: https://github.com/wgao19
-        image_url: https://github.com/wgao19.png
-      tags: [hola, docusaurus]
-build
-  打包文件  npm run build
-docs  最新版本
-  文档文件
-    文件名称就是路由
-      sidebar_position 列表位置
-      # Tutorial Intro 左侧显示的名称
-    文件加 就是可以下拉菜单
-      里面的内容和文件命名一样
-i18n 不用管 
-  翻译文件目录  自动打包 自动生成 
-src 
-  首页页面内容显示
+    文件夹  
+      日期-名称  2021-08-26-welcome  
+          index.md 是文章内容  
+    文件  
+      名称-  
+      文件内部决定页面显示   
+      slug: text   ---url   
+      title: text Post  --- 名称  
+      authors:  ---作者信息  
+        name: Gao Website  
+        title: Docusaurus Core Team   
+        url: https://github.com/wgao19  
+        image_url: https://github.com/wgao19.png  
+      tags: [hola, docusaurus]  
+build  
+  打包文件  npm run build  
+docs  最新版本  
+  文档文件  
+    文件名称就是路由  
+      sidebar_position 列表位置  
+      # Tutorial Intro 左侧显示的名称  
+    文件加 就是可以下拉菜单  
+      里面的内容和文件命名一样  
+i18n 不用管  
+  翻译文件目录  自动打包 自动生成  
+src  
+  首页页面内容显示  
 static 
   静态文件夹
 versioned_docs
