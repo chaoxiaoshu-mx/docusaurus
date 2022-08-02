@@ -24,13 +24,13 @@ jobs:
         run: |
           # npm install -g hexo-cli
           npm install
-        env:
+        # env:
           # CI: true
       # build
       - name: docusaurus build
         run: |
           npm run build
-        env:
+        # env:
           # CI: true
       # Deploy
       - name: Deploy
